@@ -1,6 +1,6 @@
 class ObsessionsController < ApplicationController
   def index
-    @obsessions = Obsession.all
+    @obsessions = Obsession.page(params[:page]).per(10)
 
     render("obsession_templates/index.html.erb")
   end
