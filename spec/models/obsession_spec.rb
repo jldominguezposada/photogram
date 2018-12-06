@@ -4,6 +4,8 @@ RSpec.describe Obsession, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:stalker) }
+
     end
 
     describe "InDirect Associations" do
