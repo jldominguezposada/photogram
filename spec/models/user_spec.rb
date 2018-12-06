@@ -16,6 +16,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:feeds) }
+
     end
 
     describe "Validations" do

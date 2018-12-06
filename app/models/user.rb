@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :feeds,
+             :through => :victims,
+             :source => :photos
+
   # Validations
 
   # Include default devise modules. Others available are:

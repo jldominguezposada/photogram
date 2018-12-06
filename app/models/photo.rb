@@ -10,6 +10,10 @@ class Photo < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :stalkers,
+             :through => :users,
+             :source => :victims
+
   # Validations
 
 end
