@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for victim_id start -->
-    <input type="text" id="victim_id" name="victim_id" class="form-control" value="<%= @obsession.victim_id %>">
+    <%= select_tag(:victim_id, options_from_collection_for_select(User.all, :id, :email, @obsession.victim_id), :class => "form-control") %>
     <!-- Input for victim_id end -->
   </div>
   <!-- Label and input for victim_id end -->
