@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @obsession.present? %>
+  <% if @obsession.errors.any? %>
+    <% @obsession.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new obsession
+</h1>
+
+
+<hr>
+
+<!-- Form obsession start -->
+<form action="/create_obsession" method="post">
+<!-- Form obsession end -->
+
+  <!-- Label and input for stalker_id start -->
+  <div class="form-group">
+    <label for="stalker_id">
+      Stalker
+    </label>
+
+    <!-- Input for stalker_id start -->
+    <input type="text" id="stalker_id" name="stalker_id" class="form-control" value="<%= @obsession.stalker_id %>">
+    <!-- Input for stalker_id end -->
+  </div>
+  <!-- Label and input for stalker_id end -->
+
+  <!-- Label and input for victim_id start -->
+  <div class="form-group">
+    <label for="victim_id">
+      Victim
+    </label>
+
+    <!-- Input for victim_id start -->
+    <input type="text" id="victim_id" name="victim_id" class="form-control" value="<%= @obsession.victim_id %>">
+    <!-- Input for victim_id end -->
+  </div>
+  <!-- Label and input for victim_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create obsession
+  </button>
+</form>
+
+<hr>
+
+<a href="/obsessions">
+  Go back
+</a>

@@ -1,0 +1,44 @@
+<h1>
+  Edit obsession #<%= @obsession.id %>
+</h1>
+
+<hr>
+
+<!-- Form obsession start -->
+<form action="/update_obsession/<%= @obsession.id %>" method="post">
+<!-- Form obsession end -->
+
+  <!-- Label and input for stalker_id start -->
+  <div class="form-group">
+    <label for="stalker_id">
+      Stalker
+    </label>
+
+    <!-- Input for stalker_id start -->
+    <input type="text" id="stalker_id" name="stalker_id" class="form-control" value="<%= @obsession.stalker_id %>">
+    <!-- Input for stalker_id end -->
+  </div>
+  <!-- Label and input for stalker_id end -->
+
+  <!-- Label and input for victim_id start -->
+  <div class="form-group">
+    <label for="victim_id">
+      Victim
+    </label>
+
+    <!-- Input for victim_id start -->
+    <input type="text" id="victim_id" name="victim_id" class="form-control" value="<%= @obsession.victim_id %>">
+    <!-- Input for victim_id end -->
+  </div>
+  <!-- Label and input for victim_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update obsession
+  </button>
+</form>
+
+<hr>
+
+<a href="/obsessions">
+  Go back
+</a>

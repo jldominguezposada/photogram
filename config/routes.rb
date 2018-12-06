@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Obsession resource:
+
+  # CREATE
+  get("/obsessions/new", { :controller => "obsessions", :action => "new_form" })
+  post("/create_obsession", { :controller => "obsessions", :action => "create_row" })
+
+  # READ
+  get("/obsessions", { :controller => "obsessions", :action => "index" })
+  get("/obsessions/:id_to_display", { :controller => "obsessions", :action => "show" })
+
+  # UPDATE
+  get("/obsessions/:prefill_with_id/edit", { :controller => "obsessions", :action => "edit_form" })
+  post("/update_obsession/:id_to_modify", { :controller => "obsessions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_obsession/:id_to_remove", { :controller => "obsessions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Like resource:
 
   # CREATE
