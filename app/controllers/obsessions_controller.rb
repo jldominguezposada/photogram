@@ -53,6 +53,22 @@ class ObsessionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_stalker
+    @obsession = Obsession.find(params.fetch("id_to_remove"))
+
+    @obsession.destroy
+
+    redirect_to("/users/#{@obsession.stalker_id}", notice: "Obsession deleted successfully.")
+  end
+
+  def destroy_row_from_victim
+    @obsession = Obsession.find(params.fetch("id_to_remove"))
+
+    @obsession.destroy
+
+    redirect_to("/users/#{@obsession.victim_id}", notice: "Obsession deleted successfully.")
+  end
+
   def destroy_row
     @obsession = Obsession.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Obsessions Sent
+
+    <a data-toggle="collapse" href="#user_obsessions_sent_new_form">
+      Add obsession
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.obsessions_sent.each do |obsession| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/obsessions/<%= obsession.id %>">
+          <%= obsession.stalker_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
