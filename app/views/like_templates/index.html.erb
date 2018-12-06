@@ -58,13 +58,21 @@
 
         <!-- Display like.users_id start -->
         <td>
-          <%= like.users.email %>
+          <% if like.users.present? %>
+            <a href="/users/<%= like.users.id %>">
+              <%= like.users.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.users_id end -->
 
         <!-- Display like.photos_id start -->
         <td>
-          <%= like.photos.users_id %>
+          <% if like.photos.present? %>
+            <a href="/photos/<%= like.photos.id %>">
+              <%= like.photos.users_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display like.photos_id end -->
 

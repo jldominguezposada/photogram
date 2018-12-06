@@ -58,13 +58,21 @@
 
         <!-- Display obsession.stalker_id start -->
         <td>
-          <%= obsession.stalker.email %>
+          <% if obsession.stalker.present? %>
+            <a href="/users/<%= obsession.stalker.id %>">
+              <%= obsession.stalker.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display obsession.stalker_id end -->
 
         <!-- Display obsession.victim_id start -->
         <td>
-          <%= obsession.victim.email %>
+          <% if obsession.victim.present? %>
+            <a href="/users/<%= obsession.victim.id %>">
+              <%= obsession.victim.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display obsession.victim_id end -->
 

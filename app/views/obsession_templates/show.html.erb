@@ -34,7 +34,11 @@
       </dt>
       <!-- Display stalker_id start -->
       <dd>
-        <%= @obsession.stalker_id %>
+        <% if @obsession.stalker.present? %>
+          <a href="/users/<%= @obsession.stalker_id %>">
+            <%= @obsession.stalker.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display stalker_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display victim_id start -->
       <dd>
-        <%= @obsession.victim_id %>
+        <% if @obsession.victim.present? %>
+          <a href="/users/<%= @obsession.victim_id %>">
+            <%= @obsession.victim.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display victim_id end -->
 
