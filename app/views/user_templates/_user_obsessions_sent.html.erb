@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.obsessions_sent.each do |obsession| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/obsessions/<%= obsession.id %>">
           <%= obsession.stalker_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

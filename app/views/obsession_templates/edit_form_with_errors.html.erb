@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @obsession.errors.any? %>
   <% @obsession.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form obsession start -->
 <form action="/update_obsession/<%= @obsession.id %>" method="post">
-<!-- Form obsession end -->
 
-  <!-- Label and input for stalker_id start -->
   <div class="form-group">
     <label for="stalker_id">
       Stalker
     </label>
 
-    <!-- Input for stalker_id start -->
     <%= select_tag(:stalker_id, options_from_collection_for_select(User.all, :id, :email, @obsession.stalker_id), :class => "form-control") %>
-    <!-- Input for stalker_id end -->
   </div>
-  <!-- Label and input for stalker_id end -->
 
-  <!-- Label and input for victim_id start -->
   <div class="form-group">
     <label for="victim_id">
       Victim
     </label>
 
-    <!-- Input for victim_id start -->
     <%= select_tag(:victim_id, options_from_collection_for_select(User.all, :id, :email, @obsession.victim_id), :class => "form-control") %>
-    <!-- Input for victim_id end -->
   </div>
-  <!-- Label and input for victim_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update obsession

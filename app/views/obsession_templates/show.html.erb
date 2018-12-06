@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link obsession start -->
       <div class="col">
         <a href="/obsessions/<%= @obsession.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit obsession
         </a>
       </div>
-      <!-- Edit link obsession end -->
 
-      <!-- Delete link obsession start -->
       <div class="col">
         <a href="/delete_obsession/<%= @obsession.id %>" class="btn btn-block btn-outline-secondary">
           Delete obsession
         </a>
       </div>
-      <!-- Delete link obsession end -->
     </div>
 
     <dl>
       <dt>
         Stalker
       </dt>
-      <!-- Display stalker_id start -->
       <dd>
         <% if @obsession.stalker.present? %>
           <a href="/users/<%= @obsession.stalker_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display stalker_id end -->
 
       <dt>
         Victim
       </dt>
-      <!-- Display victim_id start -->
       <dd>
         <% if @obsession.victim.present? %>
           <a href="/users/<%= @obsession.victim_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display victim_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@obsession.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@obsession.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
