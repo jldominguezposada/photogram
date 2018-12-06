@@ -41,7 +41,7 @@ class PhotosController < ApplicationController
   def update_row
     @photo = Photo.find(params.fetch("id_to_modify"))
 
-    @photo.users_id = params.fetch("users_id")
+    
 
     if @photo.valid?
       @photo.save
