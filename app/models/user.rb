@@ -21,6 +21,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :stalkers,
+             :through => :obsessions_received,
+             :source => :stalker
+
+  has_many   :victims,
+             :through => :obsessions_sent,
+             :source => :victim
+
   has_many   :feeds,
              :through => :victims,
              :source => :photos

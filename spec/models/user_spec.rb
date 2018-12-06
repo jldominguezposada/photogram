@@ -16,6 +16,10 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:stalkers) }
+
+    it { should have_many(:victims) }
+
     it { should have_many(:feeds) }
 
     end
