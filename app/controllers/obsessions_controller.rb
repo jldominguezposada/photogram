@@ -1,6 +1,7 @@
 class ObsessionsController < ApplicationController
   def index
-    @obsessions = Obsession.page(params[:page]).per(10)
+    @q = Obsession.ransack(params[:q])
+    @obsessions = @q.result(:distinct => true).includes(:stalker, :victim).page(params[:page]).per(10)
 
     render("obsession_templates/index.html.erb")
   end
